@@ -1,0 +1,186 @@
+body
+{
+	background-color:#EBEBE4;
+}
+#diagram, #wraper
+{
+	padding:5px;
+	border-radius:10px; 
+  -webkit-border-radius:10px; 
+  -moz-border-radius:10px; 
+   -khtml-border-radius:10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	background-color:#D4D0C8;
+}
+
+
+#wraper 
+{
+width:1100px;
+overflow:hidden;
+margin:0px auto 30px auto;
+}
+
+
+
+#wrap2
+{
+	width:200px;
+	float:left;
+}
+#inText
+{
+	margin:5px 0px 0px 10px;
+	width:100px;
+	background-color:#EBEBE4;
+}
+.te
+{
+height:250px;
+float:left;
+width:450px;
+background-color:#EBEBE4;
+}
+
+.btn
+{
+	position:relative;
+   width:160px;
+   height:40px;
+   margin:8px 20px 0px 20px;
+  font-family: arial,sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: rgb(68,68,68);
+  text-decoration: none;
+  user-select: none;
+  padding: .2em 50px;
+  outline: none;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 2px;
+  background: rgb(245,245,245) linear-gradient(#f4f4f4, #f1f1f1);
+  transition: all .218s ease 0s;
+
+}
+.btn:hover {
+   cursor:pointer;
+  color: rgb(24,24,24);
+  border: 1px solid rgb(198,198,198);
+  background: #f7f7f7 linear-gradient(#f7f7f7, #f1f1f1);
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+.btn:active {
+  color: rgb(51,51,51);
+  border: 1px solid rgb(204,204,204);
+  background: rgb(238,238,238) linear-gradient(rgb(238,238,238), rgb(224,224,224));
+  box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+}
+#btnDiv
+{
+	width:142px;
+	height:32px;
+	padding:5px;
+	padding-left:10px;
+}
+.btn> img
+{
+	position:absolute;
+	top:3px;
+	left:5px;
+}
+
+
+
+
+
+
+
+#diagram
+{
+	width:1075px;
+	height:120px;
+	margin:5px auto;
+	padding:20px  20px 70px 20px;
+	position: relative;
+    display:flex;
+    justify-content:space-between;
+	align-items:flex-end;
+}
+#diagram> hr
+{
+	position:absolute;
+	width:97.5%;
+    margin-left:-0.5%;
+	bottom:50px;
+	
+}
+.tower
+{
+    transition: height 1.5s 	ease-in-out;
+	background-color:red;
+	width:18px;
+	height:100%;
+	display:inline-block;
+	
+}
+.tower p 
+{
+	position:absolute;
+	bottom:-10px;
+
+}
+
+.tower>p>.chastota
+{
+	color:blue;
+	font-size:22px;
+	
+}
+ #desc
+ {
+	 font-style:italic;
+	 font-size:20px;
+	 width:1100px;
+	 margin: 20px auto;
+	 overflow:hidden;
+ }
+ #desc> hr
+ {
+	 box-shadow: 0 0px 2px rgba(0,0,0,0.4);
+ }
+ #vang
+ {
+	 width:1100px;
+	 margin:30px auto;
+	font-size:30px;
+
+	 
+ }
+
+.myError
+{   
+    width:400px;
+    background-color:#ddd;
+    padding:25px;
+    font-size:35px;
+    box-shadow:0 40px 40px rgba(0,0,0,0.5);
+    position: absolute;
+    left:440px;
+    opacity:0;
+    font-style:normal;
+    z-index:10;
+    text-align:center;
+
+}
+.myError span
+{
+    color:red;
+    position:absolute;
+    top:5px;
+    right:15px;
+}
+.myError span:hover
+{
+    cursor:pointer;
+    text-shadow: 0 0 10px rgba(0,0,0,1);
+}
