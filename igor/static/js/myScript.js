@@ -1,17 +1,21 @@
 jQuery(function($){
 var errors;
-alert(1)   
+
     initDiagram();
     
     $('button').bind('click',function(event){
+        $(this).addClass('.fakeActive');
         var obj={
                 type:'POST',
-                dataType:'json',
+                dataType:'json', 
+                data: {'lef'   : $('textarea[name=lef]').val(),
+                       'inText': $('[name=inText]').val()},
+                complate: function(){
+                    $("button.btn").removeClass('.fakeActive');
+                    },
                 error:function(){
                     alert("Произошла какая-то ошибка");
                     },
-                data: {'lef'   : $('textarea[name=lef]').val(),
-                       'inText': $('[name=inText]').val()},
                 success: function(data){
                     $('#vang > span').remove();
                         if(data.errors.length){
@@ -64,6 +68,7 @@ alert(1)
        }
         
     });
+    
 
 });   
 

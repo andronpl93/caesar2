@@ -91,8 +91,8 @@ def diagram(request):
 		return paket	
 	text=str(text).lower()
 	tex=re.sub(r'[^a-z]','',text)  
-	if len(tex)==0 and dlina:
-		paket['errors'].append('Нет символов для шифрования')
+	if len(tex)==0:
+		paket['errors'].append('Нет символов для шифрования.</br> Шифруются только символы латинского алфавита')
 		return paket
 	leng=len(tex)	  																
 	chastota=[round((tex.count(i)/leng)*100,1) for i in abc]

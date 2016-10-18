@@ -69,7 +69,7 @@ background-color:#EBEBE4;
   background: #f7f7f7 linear-gradient(#f7f7f7, #f1f1f1);
   box-shadow: 0 1px 2px rgba(0,0,0,.1);
 }
-.btn:active {
+.fakeActive, .btn:active{
   color: rgb(51,51,51);
   border: 1px solid rgb(204,204,204);
   background: rgb(238,238,238) linear-gradient(rgb(238,238,238), rgb(224,224,224));
@@ -163,13 +163,15 @@ background-color:#EBEBE4;
     background-color:#ddd;
     padding:25px;
     font-size:35px;
-    box-shadow:0 40px 40px rgba(0,0,0,0.5);
+    font-style:bold;
+    box-shadow:0 50px 50px rgba(0,0,0,0.5);
     position: absolute;
     left:440px;
     opacity:0;
     font-style:normal;
     z-index:10;
     text-align:center;
+
 
 }
 .myError span
