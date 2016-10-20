@@ -4,19 +4,23 @@ var errors;
     initDiagram();
     
     $('button').bind('click',function(event){
-        $(this).addClass('.fakeActive');
+        $(this).addClass('fakeActive');
+        $(this).removeClass('Hover');
         var obj={
                 type:'POST',
                 dataType:'json', 
-                data: {'lef'   : $('textarea[name=lef]').val(),
-                       'inText': $('[name=inText]').val()},
-                complate: function(){
-                    $("button.btn").removeClass('.fakeActive');
+                data: {
+                    'lef'   : $('textarea[name=lef]').val(),
+                    'inText': $('[name=inText]').val()
                     },
                 error:function(){
-                    alert("Произошла какая-то ошибка");
+                    elem=$('.myError')
+                    elem.append('<p>Произошла какая-то ошибка. </br>Ну хз, попробуйте еще раз</p>');
+                    elem.animate({'opacity':'1'},400);
+                    activeOff();
                     },
                 success: function(data){
+                    activeOff();
                     $('#vang > span').remove();
                         if(data.errors.length){
                             
@@ -27,7 +31,9 @@ var errors;
                             
                         }
                         else{
-                            $('textarea[name=rig]').val(data.result.join(""));
+                            if (event.target.name!='vanga'){
+                                $('textarea[name=rig]').val(data.result.join(""));
+                            }
                             diagramResult(data);
                             if (data.massage)
                             {
@@ -38,6 +44,8 @@ var errors;
 
                 }
         }
+        
+        
         if (event.target.name=='decoder' || event.target.name=='encoder' || event.target.name=='vanga'){
             obj.url='/'+event.target.name+'/'; 
             $.ajax(obj);            
@@ -49,10 +57,12 @@ var errors;
                 $('textarea[name=lef]').val($('textarea[name=rig]').val());
                 $('textarea[name=rig]').val(''); 
             }
-
+            activeOff();
         }
 
     });
+    
+    
     
     $('.myError').bind('click',function(event){
 
@@ -71,6 +81,14 @@ var errors;
     
 
 });   
+
+
+function activeOff(){
+    elem=$('button.fakeActive');
+    elem.addClass('Hover');
+    elem.removeClass('fakeActive');
+    
+}
 
 function diagramResult(obj){
     $('.tower').each(function(i,elem){
